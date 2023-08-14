@@ -87,7 +87,9 @@ const doCalculations = async () => {
             console.log("invalid operation");
             return
     }
-
-    console.log(`the result is ${result}`);
+if (isNaN(result)) {
+    console.log(chalk.bgWhiteBright.bold.red.bold("enter a valid input"));
+}if(!isNaN(result)){
+    console.log(  chalk.bgWhiteBright.greenBright.bold(`answer ${result}`));}
 }
 doCalculations()

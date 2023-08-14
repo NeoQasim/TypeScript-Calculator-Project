@@ -29,15 +29,6 @@ const doCalculations = async () => {
             name: "value",
             type: "number",
             message: "Enter your First number here",
-            validate: (input) => {
-                if (input === "") {
-                    return "Input cannot be empty";
-                }
-                if (!isFinite(input)) {
-                    return "Invalid input: Enter a valid positive or negative number (decimal allowed)";
-                }
-                return true; // Input is valid
-            },
         }
     ])).value, 10); // taking num inquirer from user and  
     //pass it to parseint ot make sur th base 10 
@@ -71,6 +62,11 @@ const doCalculations = async () => {
             console.log("invalid operation");
             return;
     }
-    console.log(`the result is ${result}`);
+    if (isNaN(result)) {
+        console.log(chalk.bgWhiteBright.bold.red.bold("enter a valid input"));
+    }
+    if (!isNaN(result)) {
+        console.log(chalk.bgWhiteBright.greenBright.bold(`answer ${result}`));
+    }
 };
 doCalculations();
