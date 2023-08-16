@@ -84,7 +84,7 @@ const doCalculations = async () => {
             break;
 
         default:
-            console.log("invalid operation");
+            console.log("invalid operation try again");
             return
     }
 if (isNaN(result)) {
