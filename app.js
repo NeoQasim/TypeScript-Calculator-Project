@@ -53,13 +53,13 @@ const doCalculations = async () => {
             break;
         case 'divide':
             if (num2 === 0) {
-                console.log('Error: Division by zero');
+                console.log(chalk.blue('Error: Division by zero'));
                 return;
             }
             result = divide(num1, num2);
             break;
         default:
-            console.log("invalid operation");
+            console.log("invalid operation try again");
             return;
     }
     if (isNaN(result)) {
